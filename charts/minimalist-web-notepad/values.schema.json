@@ -1,1 +1,41 @@
-{}
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {    
+    "service": {
+        "description": "Service specific configuration",
+        "type": "object",
+        "properties": {
+          "image": {
+            "description": "image docker",
+            "type": "object",
+            "properties": {
+              "pullPolicy": {
+                "type": "string",
+                "description": "option when pulling the docker image",
+                "default": "Always",
+                "x-onyxia": {
+                  "hidden": true
+                },
+                "enum": [
+                  "IfNotPresent",
+                  "Always",
+                  "Never"
+                ]
+              },
+              "version": {
+                "description": "Minimalist web notepad supported versions",
+                "type": "string",
+                "default": "jdreinhardt/minimalist-web-notepad:latest",
+                "listEnum": [
+                  "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master"
+                ],
+                "render": "list"
+              }
+            }
+          }
+        }
+      }
+    }
+}
+    
