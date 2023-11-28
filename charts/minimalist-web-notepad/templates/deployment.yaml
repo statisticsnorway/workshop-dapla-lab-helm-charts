@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minimalist-web-notepad
+  labels:
+    app: notepad
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notepad
+  template:
+    metadata:
+      labels:
+        app: notepad
+    spec:
+      containers:
+      - name: workshop-notepad
+        image: {{ .Values.service.image.version }}
+        ports:
+        - containerPort: 80
