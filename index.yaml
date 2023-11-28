@@ -1,5 +1,26 @@
 apiVersion: v1
 entries:
+  data-collector:
+  - apiVersion: v2
+    created: "2023-11-28T12:53:27.856466637Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.1
+    description: DEMO
+    digest: 73ad2708600c7d304294438e87009fe3aee015d9cd7a5eeaaf2b2238b3a2ed06
+    home: https://jupyter.org/
+    icon: https://avatars.githubusercontent.com/u/5849578
+    keywords:
+    - Jupyter
+    - Python
+    name: data-collector
+    sources:
+    - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts/releases/download/data-collector-0.0.3/data-collector-0.0.3.tgz
+    version: 0.0.3
   jupyter-python-dapla:
   - apiVersion: v2
     created: "2023-11-28T12:04:57.085503189Z"
@@ -53,4 +74,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts/releases/download/redash-0.0.1/redash-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-28T12:32:12.85543378Z"
+generated: "2023-11-28T12:53:27.856477327Z"
