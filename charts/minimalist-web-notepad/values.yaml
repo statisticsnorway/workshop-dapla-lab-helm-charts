@@ -2,3 +2,21 @@ service:
   image:
     version: "jdreinhardt/minimalist-web-notepad:latest"
     pullPolicy: IfNotPresent
+
+istio:
+  enabled: false
+
+security:
+  networkPolicy:
+    enabled: false
+  serviceEntry:
+    enabled: false
+  oauth2:
+    enabled: false
+
+networking:
+  type: ClusterIP
+  clusterIP: None
+  service:
+    port: 80
+
