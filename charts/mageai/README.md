@@ -1,6 +1,6 @@
 # dapla-lab-mageai
 
-![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.9.46](https://img.shields.io/badge/AppVersion-0.9.46-informational?style=flat-square)
+![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.9.46](https://img.shields.io/badge/AppVersion-0.9.46-informational?style=flat-square)
 
 A Helm chart for Mage AI
 
@@ -8,7 +8,7 @@ A Helm chart for Mage AI
 
 ## Source Code
 
-* <https://statisticsnorway.github.io/dapla-lab-helm-charts-services>
+* <https://statisticsnorway.github.io/workshop-dapla-lab-helm-charts>
 
 ## Requirements
 
