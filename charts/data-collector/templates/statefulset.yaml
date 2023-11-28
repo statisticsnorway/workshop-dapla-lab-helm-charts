@@ -1,0 +1,95 @@
+{{- $fullName := include "library-chart.fullname" . -}}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "library-chart.fullname" . }}
+  labels:
+    {{- include "library-chart.labels" . | nindent 4 }}
+spec:
+{{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+{{- end }}
+  serviceName: {{ include "library-chart.fullname" . }}
+  selector:
+    matchLabels:
+      {{- include "library-chart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      labels:
+        {{- include "library-chart.selectorLabels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      volumes:
+        - name: application-config-volume
+          configMap:
+            name: {{ include "library-chart.fullname" . }}-config
+        - name: custom-data
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "library-chart.fullname" .) }}
+        {{- else }}
+          emptyDir: {}
+        {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "library-chart.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      subdomain: {{ include "library-chart.fullname" . }}
+      hostname: jupyter
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.service.image.version }}"
+          command: ["/run.sh"]
+          imagePullPolicy: {{ .Values.service.image.pullPolicy }}
+          env:
+            - name: KUBERNETES_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: IMAGE_NAME
+              value: "{{ .Values.service.image.version }}"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.networking.service.port }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.networking.service.port }}
+          startupProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.networking.service.port }}
+            {{- toYaml .Values.startupProbe | nindent 12 }}     
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: application-config-volume
+              mountPath: /conf/application.properties
+              subPath: application.properties
+              readOnly: true
+            - name: custom-data
+              mountPath: /local-temp/
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

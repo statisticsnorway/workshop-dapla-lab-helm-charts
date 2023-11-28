@@ -1,0 +1,62 @@
+# Source: ssb-chart/templates/configmap-application.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "library-chart.fullname" . }}-config
+data:
+  application.properties: |
+    #
+    # Server configuration
+    #
+    http.host: 0.0.0.0
+    http.port: 9990
+    http.cors.allow.origin: .*
+    http.cors.allow.header: Content-Type,Authorization
+    http.cors.allow.methods: POST,GET,PUT,DELETE,HEAD
+    http.cors.allow.credentials: false
+    http.cors.allow.max-age: 900
+    
+    #
+    # Data Collector configuration
+    #
+    content.stream.connector: rawdata
+    data.collector.worker.threads: 10
+    data.collector.http.client.timeout.seconds: 3600
+    data.collector.http.request.timeout.seconds: 3600
+    
+    # We will not encrypt this data for demo purpose
+    # rawdata.encryption.provider: google-secret-manager
+    # rawdata.encryption.gcp.projectId: staging-dapla-felles-e29f
+    # rawdata.encryption.key: rawdata-encryption-key-dapla-felles
+    # rawdata.encryption.salt: rawdata-encryption-salt-dapla-felles
+    
+    #
+    # Maskinporten configuration
+    #
+    maskinporten.guardian.env: STAGING
+    
+    #
+    # Rawdata Integrity check configuration
+    #
+    data.collector.integrityCheck.dbSizeInMb=1024
+    data.collector.integrityCheck.database.location=/local-temp/lmdb
+    data.collector.integrityCheck.consumer.timeoutInSeconds=15
+    
+    #
+    # Rawdata Client configuration
+    #
+    rawdata.client.provider: gcs
+    
+    #
+    # Rawdata Client GCS configuration
+    #
+    gcs.bucket-name: ssb-staging-dapla-felles-data-kilde
+    gcs.credential-provider: compute-engine
+    gcs.service-account.key-file:
+    gcs.listing.min-interval-seconds: 30
+    
+    local-temp-folder: /local-temp/avro
+    avro-file.max.seconds: 86400
+    avro-file.max.bytes: 67108864
+    avro-file.sync.interval: 524288
+
