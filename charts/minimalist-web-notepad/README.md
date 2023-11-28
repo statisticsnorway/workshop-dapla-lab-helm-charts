@@ -1,6 +1,6 @@
 # minimalist-web-notepad
 
-![Version: 0.0.4](https://img.shields.io/badge/Version-0.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.5](https://img.shields.io/badge/Version-0.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 WORKSHOP - The ultimate notepad for DaplaLab.
 
@@ -18,7 +18,7 @@ WORKSHOP - The ultimate notepad for DaplaLab.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| istio.enabled | bool | `false` |  |
+| istio.enabled | bool | `true` |  |
 | networking.clusterIP | string | `"None"` |  |
 | networking.service.port | int | `80` |  |
 | networking.type | string | `"ClusterIP"` |  |
