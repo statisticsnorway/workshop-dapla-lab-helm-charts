@@ -1,8 +1,8 @@
 # jupyter-python-dapla
 
-![Version: 1.1.11](https://img.shields.io/badge/Version-1.1.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
-The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
+DEMO - The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
 **Homepage:** <https://jupyter.org/>
 
@@ -14,7 +14,7 @@ The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
 
 ## Values
 
