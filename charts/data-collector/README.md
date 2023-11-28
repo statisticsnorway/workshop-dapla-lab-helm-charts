@@ -1,8 +1,8 @@
-# jupyter-python-dapla
+# data-collector
 
 ![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
-DEMO - The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
+DEMO
 
 **Homepage:** <https://jupyter.org/>
 
@@ -55,7 +55,7 @@ DEMO - The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | mlflow.configMapName | string | `""` |  |
 | nameOverride | string | `""` |  |
 | networking.clusterIP | string | `"None"` |  |
-| networking.service.port | int | `8888` |  |
+| networking.service.port | int | `9990` |  |
 | networking.sparkui.port | int | `4040` |  |
 | networking.type | string | `"ClusterIP"` |  |
 | nodeSelector | object | `{}` |  |
@@ -63,10 +63,10 @@ DEMO - The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | oidc.enabled | bool | `true` |  |
 | oidc.tokenExchangeUrl | string | `"https://sso.dapla-dev.ssb.no/realms/ssb/protocol/openid-connect/token"` |  |
 | persistence.accessMode | string | `"ReadWriteOnce"` |  |
-| persistence.enabled | bool | `false` |  |
+| persistence.enabled | bool | `true` |  |
 | persistence.size | string | `"10Gi"` |  |
 | podAnnotations | object | `{}` |  |
-| podLabels."onyxia.app" | string | `"jupyterlab"` |  |
+| podLabels."onyxia.app" | string | `"data-collector"` |  |
 | podSecurityContext.fsGroup | int | `100` |  |
 | replicaCount | int | `1` |  |
 | repository.condaRepository | string | `""` |  |
@@ -82,12 +82,11 @@ DEMO - The JupyterLab IDE with Python, tailored for SSB's data platform (Dapla).
 | security.oauth2.enabled | bool | `false` |  |
 | security.oauth2.oidcIssuerUrl | string | `""` |  |
 | security.oauth2.provider | string | `"keycloak-oidc"` |  |
-| security.password | string | `"changeme"` |  |
 | security.serviceEntry.enabled | bool | `true` |  |
 | security.serviceEntry.hosts[0] | string | `"storage.googleapis.com"` |  |
 | securityContext | object | `{}` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
-| service.image.version | string | `"europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-stat-docker/jupyter/jupyterlab-dapla:v1"` |  |
+| service.image.version | string | `"europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/data-collector:workshop1"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
