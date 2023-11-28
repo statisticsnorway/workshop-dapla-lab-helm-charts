@@ -37,3 +37,23 @@ redash:
 
 userPreferences:
   language: "en"
+
+oauth2:
+  enabled: false
+
+security:
+  networkPolicy:
+    enabled: true
+    from: []
+  allowlist:
+    enabled: false
+
+istio:
+  enabled: true
+  gateways:
+    - istio-namespace/example-gateway
+  hostname: chart-example.local
+
+networking:
+  service:
+    port: 5000
