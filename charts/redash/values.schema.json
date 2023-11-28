@@ -87,6 +87,42 @@
         }
       }
     },
+    "istio": {
+      "type": "object",
+      "form": true,
+      "title": "Ingress Details",
+      "properties": {
+        "enabled": {
+          "description": "Enable istio ingress",
+          "type": "boolean",
+          "default": true,
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.istio.enabled"
+          }
+        },
+        "gateways": {
+          "description": "Path of istio ingress gateways to be used",
+          "type": "array",
+          "title": "Istio gateways",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "k8s.istio.gateways"
+          },
+
+          "default": []
+        },
+        "hostname": {
+          "type": "string",
+          "form": true,
+          "title": "Hostname",
+          "x-onyxia": {
+            "hidden": true,
+            "overwriteDefaultWith": "{{project.id}}-{{k8s.randomSubdomain}}-0.{{k8s.domain}}"
+          }
+        }
+      }
+    },
     "ingress": {
       "type": "object",
       "form": true,

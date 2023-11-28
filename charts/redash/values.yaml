@@ -37,3 +37,19 @@ redash:
 
 userPreferences:
   language: "en"
+
+oauth2:
+  enabled: false
+
+security:
+  networkPolicy:
+    enabled: true
+  allowlist:
+    enabled: false
+
+istio:
+  enabled: false
+
+networking:
+  service:
+    port: 5000
