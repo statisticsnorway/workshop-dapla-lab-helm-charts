@@ -45,6 +45,24 @@ entries:
     version: 0.0.4
   minimalist-web-notepad:
   - apiVersion: v2
+    created: "2023-11-28T13:53:48.239171733Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.1
+    description: WORKSHOP - The ultimate notepad for DaplaLab.
+    digest: 2ec7adab2a31b614e2cd9dff3f88dafb9b8f37ac51a5da82cdd0518014f94215
+    icon: https://cdn-icons-png.flaticon.com/512/686/686112.png
+    keywords:
+    - Notepad
+    name: minimalist-web-notepad
+    sources:
+    - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts/releases/download/minimalist-web-notepad-0.0.5/minimalist-web-notepad-0.0.5.tgz
+    version: 0.0.5
+  - apiVersion: v2
     created: "2023-11-28T13:40:04.251649097Z"
     dependencies:
     - name: library-chart
@@ -129,4 +147,4 @@ entries:
     urls:
     - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts/releases/download/redash-0.0.1/redash-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-28T13:40:04.251665978Z"
+generated: "2023-11-28T13:53:48.239191029Z"
