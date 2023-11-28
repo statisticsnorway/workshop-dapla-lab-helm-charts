@@ -4,7 +4,7 @@ service:
     pullPolicy: IfNotPresent
 
 istio:
-  enabled: false
+  enabled: true
 
 security:
   networkPolicy:
