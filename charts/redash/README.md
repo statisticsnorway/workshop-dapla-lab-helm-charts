@@ -1,6 +1,6 @@
 # redash
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Redash is an open source tool built for teams to query, visualize and collaborate.
 
@@ -18,7 +18,7 @@ Redash is an open source tool built for teams to query, visualize and collaborat
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | postgresql | 11.6.15 |
 | https://getredash.github.io/contrib-helm-chart/ | redash | 3.0.0 |
-| https://inseefrlab.github.io/helm-charts-interactive-services | library-chart | 1.5.15 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
 
 ## Values
 
@@ -32,6 +32,11 @@ Redash is an open source tool built for teams to query, visualize and collaborat
 | ingress.hostname | string | `"chart-example.local"` |  |
 | ingress.ingressClassName | string | `""` |  |
 | ingress.tls | bool | `true` |  |
+| istio.enabled | bool | `true` |  |
+| istio.gateways[0] | string | `"istio-namespace/example-gateway"` |  |
+| istio.hostname | string | `"chart-example.local"` |  |
+| networking.service.port | int | `5000` |  |
+| oauth2.enabled | bool | `false` |  |
 | postgresql.fullnameOverride | string | `"redash-db"` |  |
 | postgresql.image.tag | string | `"12"` |  |
 | redash.externalPostgreSQLSecret.key | string | `"connectionString"` |  |
@@ -42,6 +47,9 @@ Redash is an open source tool built for teams to query, visualize and collaborat
 | redash.postgresql.existingSecret | string | `"toto"` |  |
 | redash.redash.cookieSecret | string | `"changeme"` |  |
 | redash.redash.secretKey | string | `"changeme"` |  |
+| security.allowlist.enabled | bool | `false` |  |
+| security.networkPolicy.enabled | bool | `true` |  |
+| security.networkPolicy.from | list | `[]` |  |
 | userPreferences.language | string | `"en"` |  |
 
 ----------------------------------------------
