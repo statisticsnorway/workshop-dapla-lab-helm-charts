@@ -18,6 +18,13 @@ WORKSHOP - The ultimate notepad for DaplaLab.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| istio.enabled | bool | `false` |  |
+| networking.clusterIP | string | `"None"` |  |
+| networking.service.port | int | `80` |  |
+| networking.type | string | `"ClusterIP"` |  |
+| security.networkPolicy.enabled | bool | `false` |  |
+| security.oauth2.enabled | bool | `false` |  |
+| security.serviceEntry.enabled | bool | `false` |  |
 | service.image.pullPolicy | string | `"IfNotPresent"` |  |
 | service.image.version | string | `"jdreinhardt/minimalist-web-notepad:latest"` |  |
 
