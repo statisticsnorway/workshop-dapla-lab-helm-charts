@@ -1,0 +1,4 @@
+service:
+  image:
+    version: "jdreinhardt/minimalist-web-notepad:latest"
+    pullPolicy: IfNotPresent
