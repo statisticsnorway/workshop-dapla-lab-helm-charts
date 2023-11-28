@@ -26,11 +26,7 @@
               "version": {
                 "description": "Minimalist web notepad supported versions",
                 "type": "string",
-                "default": "jdreinhardt/minimalist-web-notepad:latest",
-                "listEnum": [
-                  "europe-north1-docker.pkg.dev/artifact-registry-5n/dapla-lab-docker/onyxia/datadoc:master"
-                ],
-                "render": "list"
+                "default": "jdreinhardt/minimalist-web-notepad:latest"
               }
             }
           }
