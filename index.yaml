@@ -216,4 +216,27 @@ entries:
     urls:
     - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts/releases/download/redash-0.0.1/redash-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-28T14:19:13.692240517Z"
+  statbank-pxwebapi:
+  - apiVersion: v2
+    created: "2023-11-29T11:19:19.642178947Z"
+    dependencies:
+    - name: library-chart
+      repository: https://statisticsnorway.github.io/dapla-lab-helm-charts-services
+      version: 1.0.1
+    description: API for queries towards all StatBank Norway’s tables. Output formats
+      are JSON-stat, csv and xlsx.
+    digest: 6649be60f75b7a5d9e0457572aebf1b076e2e0ba5326bb7fe2dbb12f37427b11
+    home: https://github.com/statisticsnorway/statbank-pxwebapi
+    icon: https://avatars.githubusercontent.com/u/148870020
+    keywords:
+    - Statbank
+    - Statistikkbanken
+    - JSON-stat
+    name: statbank-pxwebapi
+    sources:
+    - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts
+    type: application
+    urls:
+    - https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts/releases/download/statbank-pxwebapi-0.1.3/statbank-pxwebapi-0.1.3.tgz
+    version: 0.1.3
+generated: "2023-11-29T11:19:19.642202751Z"
