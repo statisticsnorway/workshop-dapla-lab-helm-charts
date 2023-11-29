@@ -8,13 +8,13 @@ API for queries towards all StatBank Norway’s tables. Output formats are JSON-
 
 ## Source Code
 
-* <https://github.com/statisticsnorway/dapla-lab-helm-charts-services>
+* <https://github.com/statisticsnorway/workshop-dapla-lab-helm-charts>
 
 ## Requirements
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.0 |
+| https://statisticsnorway.github.io/dapla-lab-helm-charts-services | library-chart | 1.0.1 |
 
 ## Values
 
