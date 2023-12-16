@@ -306,10 +306,10 @@
                     "type": "string",
                     "title": "OIDC issuer url",
                     "description": "Url to the OIDC issuer",
-                    "default": "https://sso.dapla-dev.ssb.no/realms/ssb",
+                    "default": "",
                     "x-onyxia": {
                       "hidden": true,
-                      "overwriteDefaultWith": "region.oauth2.oidcIssuerUrl"
+                      "overwriteDefaultWith": "region.customValues.oidc.tokenExchangeUrl"
                     }
                   },
                   "clientId": {
